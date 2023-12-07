@@ -1,6 +1,30 @@
 #include <stdio.h>
 int main ()
 {
+
+printf("                                       _     ___   ____ ___ _   _    \n");
+printf("                                      | |   / _ \\ / ___|_ _| \\ | |    \n");
+printf("                                      | |  | | | | |  _ | ||  \\| |  \n");
+printf("                                      | |__| |_| | |_| || || |\\  |  \n ");
+printf("                                     |_____\\___/ \\____|___|_| \\_|   \n\n\n\n");
+
+
+    printf("                         **************************************************\n");
+    printf("                         *      Welcome to the Simple Notepad using C     *\n");
+    printf("                         *                                                *\n");
+    printf("                         *          Please Login to continue.             *\n");
+    printf("                         **************************************************\n");
+
+   char password[15];
+   char unlock[]="labibnote";
+
+   printf("                          Enter your password: ");
+   gets(password);
+
+   system("cls");
+   if (strcmp(password,unlock)==0)
+{
+
     int operations, numbers=1;
 
     printf("      ************************************\n");
@@ -13,13 +37,12 @@ int main ()
 
 
 
-    printf("             .     .    \n");
-    printf("              \\   /     \n");
-    printf("            `  .-.  '   \n");
-    printf("           -- (   ) --  \n");
-    printf("            `  `-'  '   \n");
-    printf("              /   \\     \n");
-    printf("             '     '    \n");
+    printf("                 ______ ______\n");
+    printf("               _/      Y      \\_\n");
+    printf("              // ~~ ~~ | ~~ ~  \\\\\n");
+    printf("             // ~ ~ ~~ | ~~~ ~~ \\\\\n");
+    printf("            //________.|.________\\\\\n");
+    printf("           `----------`-'----------'\n");
     printf("\n");
 
     while (numbers != 0)      //cycle
@@ -44,14 +67,13 @@ int main ()
 
     printf("                         Start writing your note here\n\n");
 
-    printf("                                       ||\n");
-    printf("                                       ||\n");
-    printf("                                       ||\n");
-    printf("                                    /______\\\n");
-    printf("                                     /    \\\n");
-    printf("                                      /  \\\n");
-    printf("                                       /\\ \n");
-    printf("\n----------------------- ");
+    printf("     ____\n");
+    printf("    |    |\n");
+    printf("    |    |\n");
+    printf("    |    |\n");
+    printf("    |____|\n");
+    printf("     \\__/\n");
+    printf("      \\/===================  ");
 
 
    fgets(main, sizeof(main), stdin);
@@ -103,7 +125,6 @@ break;
             break;
 
 }
-printf("\n---------------------------------------------------\n");
         printf("\nDO YOU WANT TO EXIT? (0) or Continue? (1): ");
         scanf("%d", &numbers);
         system("cls");
@@ -115,4 +136,16 @@ printf("\n\nThank you for using the Simple note project.\n\n");
      printf("AL- Nahian Labib\n");
 
         return 0;
+}
+
+else 
+{
+printf("                                              ___  ____  ____ ____  _      \n");
+printf("                                             / _ \\|  _ \\/ ___/ ___|| |         \n");
+printf("                                            | | | | |_) \\___ \\___ \\| |        \n");
+printf("                                            | |_| |  __/ ___) |__) |_|         \n");
+printf("                                             \\___/|_|   |____/____/(_)       \n");
+
+   printf("\n\n                                         Sorry, Password Incorrected!!!\n\n\n\n\n\n\n");
+}
 }
