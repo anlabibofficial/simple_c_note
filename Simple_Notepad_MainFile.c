@@ -2,6 +2,9 @@
 int main ()
 {
 
+int number2=1;
+while (number2 != 0)
+{
 printf("                                       _     ___   ____ ___ _   _    \n");
 printf("                                      | |   / _ \\ / ___|_ _| \\ | |    \n");
 printf("                                      | |  | | | | |  _ | ||  \\| |  \n");
@@ -125,6 +128,12 @@ break;
             break;
 
 }
+    printf("\t\t\t\t\t           _ _   \n");
+    printf("\t\t\t\t\t          (_) |  \n");
+    printf("\t\t\t\t\t  _____  ___| |_ \n");
+    printf("\t\t\t\t\t / _ \\ \\/ / | __|\n");
+    printf("\t\t\t\t\t|  __/>  <| | |_ \n");
+    printf("\t\t\t\t\t \\___/_/\\_\\_|\\__|\n");
         printf("\nDO YOU WANT TO EXIT? (0) or Continue? (1): ");
         scanf("%d", &numbers);
         system("cls");
@@ -147,5 +156,10 @@ printf("                                            | |_| |  __/ ___) |__) |_|  
 printf("                                             \\___/|_|   |____/____/(_)       \n");
 
    printf("\n\n                                         Sorry, Password Incorrected!!!\n\n\n\n\n\n\n");
+
+    printf("\nEnter Password again: ");
+        scanf("%d", &number2);
+        system("cls");
+}
 }
 }
