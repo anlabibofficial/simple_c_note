@@ -1,6 +1,14 @@
 #include <stdio.h>
+#include <string.h>
+#include <windows.h>
+
 int main ()
 {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+ int color = BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_INTENSITY; 
+ int textAttributes = FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY; 
+SetConsoleTextAttribute(hConsole, color | textAttributes);
+system("cls");
 
 int number2=1;
 while (number2 != 0)
