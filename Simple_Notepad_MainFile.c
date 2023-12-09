@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
+#include <stdlib.h>
+
+void github()
+{
+    char url[] = "https://github.com/anlabibofficial/simple_c_note";  
+
+    char command [200];
+    sprintf(command, "start %s",url);
+
+    system(command);
+}
+
 
 int main ()
 {
@@ -60,6 +72,7 @@ printf("                                     |_____\\___/ \\____|___|_| \\_|   \
     {
     printf("\n\n    [1] Write\n");
     printf("    [2] View Notes\n\n");
+    printf("    [3] GitHub\n");
     printf("    [0] Exit\n\n");
 
     printf("    Choose an option: ");
@@ -101,7 +114,24 @@ printf("                                     |_____\\___/ \\____|___|_| \\_|   \
 
    else
    {
-      printf("\n\n\nYour Note saved successfully.");
+      printf("\n.......................................................................................................................\n");
+      printf("\n\n\n  Your Note saved successfully.\n");
+      int lenght = strlen(main);
+
+      int wordcount;
+      int wci=0;
+     while (main[wci] != '\0')
+     {
+        if (main[wci] == ' ')
+        {
+            wordcount++;
+        }
+        wci++;
+     }
+     wordcount= wordcount+1;
+     printf("  Total Words: %d\n",wordcount);           //counting words
+     printf("  Total Character: %d\n\n",lenght-1);           //counting characters.
+
    }
    fclose(newfile);  //closed file
 
@@ -118,8 +148,8 @@ case 2:
    fgets(out, sizeof(out), output);    //scan data from file
 
    printf(".......................................................................................................................\n\n");
-   printf("Your Note: %s\n",out);
-   printf(".......................................................................................................................");
+   printf("  Note: %s\n",out);
+   printf("\n.......................................................................................................................\n\n");
 
 
    fclose(output);
@@ -127,12 +157,19 @@ case 2:
 break;
 
     }
+
+    case 3:
+    {
+          github();
+          break;  
+    }
+
     case 0:
     numbers=0;
     break;
 
     default:
-            printf("INVALID Input\n");
+            printf("  INVALID Input\n");
             break;
 
 }
@@ -142,15 +179,15 @@ break;
     printf("\t\t\t\t\t / _ \\ \\/ / | __|\n");
     printf("\t\t\t\t\t|  __/>  <| | |_ \n");
     printf("\t\t\t\t\t \\___/_/\\_\\_|\\__|\n");
-        printf("\nDO YOU WANT TO EXIT? (0) or Continue? (1): ");
+        printf("\n  DO YOU WANT TO EXIT? (0) or RETURN TO MAIN MENU? (1): ");
         scanf("%d", &numbers);
         system("cls");
 
 }
-printf("\n\nThank you for using the Simple note project.\n\n");
-     printf("Credits:\n");
+printf("\n\n  Thank you for using the Simple note project.\n\n");
+     printf("  Credits:\n");
 
-     printf("AL- Nahian Labib\n");
+     printf("  AL- Nahian Labib\n");
 
         return 0;
 }
@@ -165,7 +202,7 @@ printf("                                             \\___/|_|   |____/____/(_) 
 
    printf("\n\n                                         Sorry, Password Incorrected!!!\n\n\n\n\n\n\n");
 
-    printf("\nEnter Password again: ");
+    printf("\n  Enter Password again: ");
         scanf("%d", &number2);
         system("cls");
 }
