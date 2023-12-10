@@ -3,87 +3,21 @@
 #include <windows.h>
 #include <stdlib.h>
 
-void github()
-{
-    char url[] = "https://github.com/anlabibofficial/simple_c_note";  
+void morningNote()                         //morning function
+{  
+    int morningOP;
 
-    char command [200];
-    sprintf(command, "start %s",url);
-
-    system(command);
-}
-
-
-int main ()
-{
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
- int color = BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_INTENSITY; 
- int textAttributes = FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY; 
-SetConsoleTextAttribute(hConsole, color | textAttributes);
-system("cls");
-
-int number2=1;
-while (number2 != 0)
-{
-printf("                                       _     ___   ____ ___ _   _    \n");
-printf("                                      | |   / _ \\ / ___|_ _| \\ | |    \n");
-printf("                                      | |  | | | | |  _ | ||  \\| |  \n");
-printf("                                      | |__| |_| | |_| || || |\\  |  \n ");
-printf("                                     |_____\\___/ \\____|___|_| \\_|   \n\n\n\n");
-
-
-    printf("                         **************************************************\n");
-    printf("                         *      Welcome to the Simple Notepad using C     *\n");
-    printf("                         *                                                *\n");
-    printf("                         *          Please Login to continue.             *\n");
-    printf("                         **************************************************\n");
-
-   char password[15];
-   char unlock[]="labibnote";
-
-   printf("                          Enter your password: ");
-   gets(password);
-
-   system("cls");
-   if (strcmp(password,unlock)==0)
-{
-
-    int operations, numbers=1;
-
-    printf("      ************************************\n");
-    printf("      *                                  *\n");
-    printf("      *  WELCOME to the Simple Notepad   *\n");
-    printf("      *  Programmed with C.              *\n");
-    printf("      *  Developer: Labib                *\n");
-    printf("      *                                  *\n");
-    printf("      ************************************\n");
-
-
-
-    printf("                 ______ ______\n");
-    printf("               _/      Y      \\_\n");
-    printf("              // ~~ ~~ | ~~ ~  \\\\\n");
-    printf("             // ~ ~ ~~ | ~~~ ~~ \\\\\n");
-    printf("            //________.|.________\\\\\n");
-    printf("           `----------`-'----------'\n");
-    printf("\n");
-
-    while (numbers != 0)      //cycle
-    {
-    printf("\n\n    [1] Write\n");
-    printf("    [2] View Notes\n\n");
-    printf("    [3] GitHub\n");
-    printf("    [0] Exit\n\n");
+     printf("\n\n    [1] Write\n");
+    printf("    [2] View Note\n\n");
 
     printf("    Choose an option: ");
 
-   scanf("%d",&operations);
-
-     system("cls");
+    scanf("%d",&morningOP);
+    system("cls");
    getchar ();
 
-   switch (operations)
-{
+   switch (morningOP) 
+    {
     case 1:
 {
    FILE *newfile;
@@ -139,7 +73,7 @@ break;
 }
 
 case 2:
-    {
+ {   
 
     FILE *output;
     char out[100000];
@@ -155,10 +89,100 @@ case 2:
    fclose(output);
 
 break;
+ }
 
-    }
+}
+}                                            //morning fuction end
 
-    case 3:
+void github()                                    //github function
+{
+    char url[] = "https://github.com/anlabibofficial/simple_c_note";  
+
+    char command [200];
+    sprintf(command, "start %s",url);
+
+    system(command);
+}                                        //github function end
+
+ 
+int main ()                              //main function.......................................................................
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+ int color = BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_INTENSITY; 
+ int textAttributes = FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY; 
+SetConsoleTextAttribute(hConsole, color | textAttributes);
+system("cls");
+
+int number2=1;
+while (number2 != 0)
+{
+printf("                                       _     ___   ____ ___ _   _    \n");
+printf("                                      | |   / _ \\ / ___|_ _| \\ | |    \n");
+printf("                                      | |  | | | | |  _ | ||  \\| |  \n");
+printf("                                      | |__| |_| | |_| || || |\\  |  \n ");
+printf("                                     |_____\\___/ \\____|___|_| \\_|   \n\n\n\n");
+
+
+    printf("                         **************************************************\n");
+    printf("                         *      Welcome to the Simple Notepad using C     *\n");
+    printf("                         *                                                *\n");
+    printf("                         *          Please Login to continue.             *\n");
+    printf("                         **************************************************\n");
+
+   char password[15];
+   char unlock[]="labibnote";
+
+   printf("                          Enter your password: ");
+   gets(password);
+
+   system("cls");
+   if (strcmp(password,unlock)==0)
+{
+
+    int operations, numbers=1;
+
+    printf("      ************************************\n");
+    printf("      *                                  *\n");
+    printf("      *  WELCOME to the Simple Notepad   *\n");
+    printf("      *  Programmed with C.              *\n");
+    printf("      *  Developer: Labib                *\n");
+    printf("      *                                  *\n");
+    printf("      ************************************\n");
+
+
+
+    printf("                 ______ ______\n");
+    printf("               _/      Y      \\_\n");
+    printf("              // ~~ ~~ | ~~ ~  \\\\\n");
+    printf("             // ~ ~ ~~ | ~~~ ~~ \\\\\n");
+    printf("            //________.|.________\\\\\n");
+    printf("           `----------`-'----------'\n");
+    printf("\n");
+
+    while (numbers != 0)      //cycle
+    {
+        printf("\n  Select a Note:\n");
+    printf("  [1] Morning Note\n\n");
+    printf("\n\n  Others:\n");
+    printf("  [2] GitHub\n");
+    printf("  [0] Exit\n\n");
+
+    printf("  Choose an option: ");
+
+   scanf("%d",&operations);
+
+     system("cls");
+   getchar ();
+
+   switch (operations)
+{
+   case 1:
+   {
+    morningNote();
+    break;
+   }
+
+    case 2:
     {
           github();
           break;  
@@ -169,7 +193,7 @@ break;
     break;
 
     default:
-            printf("  INVALID Input\n");
+            printf("   INVALID Input\n");
             break;
 
 }
