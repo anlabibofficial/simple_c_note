@@ -2,28 +2,33 @@
 #include <string.h>
 #include <windows.h>
 #include <stdlib.h>
+#include <conio.h>
 
 void morningNote()                         //morning function
 {  
-    int morningOP;
+    char morningOP;
+    
+    printf("                                 *****************\n");
+    printf("                                 *   Welcome to  *\n");
+    printf("                                 *  Morning Note *\n");
+    printf("                                 *****************\n");
 
-     printf("\n\n    [1] Write\n");
+    printf("\n\n    PRESS KEY:");
+    printf("\n\n    [1] Write\n");
     printf("    [2] View Note\n\n");
 
-    printf("    Choose an option: ");
-
-    scanf("%d",&morningOP);
-    system("cls");
-   getchar ();
+    morningOP = getch();
+  
+   system("cls");
 
    switch (morningOP) 
     {
-    case 1:
+    case '1':
 {
    FILE *newfile;
    char main[100000];
 
-    printf("                         Start writing your note here\n\n");
+    printf("\n                         Start writing your note here\n\n");
 
     printf("     ____\n");
     printf("    |    |\n");
@@ -52,7 +57,7 @@ void morningNote()                         //morning function
       printf("\n\n\n  Your Note saved successfully.\n");
       int lenght = strlen(main);
 
-      int wordcount;
+      int wordcount=0;
       int wci=0;
      while (main[wci] != '\0')
      {
@@ -72,7 +77,7 @@ void morningNote()                         //morning function
 break;
 }
 
-case 2:
+case '2':
  {   
 
     FILE *output;
@@ -108,8 +113,8 @@ void github()                                    //github function
 int main ()                              //main function.......................................................................
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
- int color = BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_INTENSITY; 
- int textAttributes = FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY; 
+ int color = BACKGROUND_BLUE | BACKGROUND_GREEN |  BACKGROUND_INTENSITY; 
+ int textAttributes = 0; 
 SetConsoleTextAttribute(hConsole, color | textAttributes);
 system("cls");
 
@@ -139,7 +144,8 @@ printf("                                     |_____\\___/ \\____|___|_| \\_|   \
    if (strcmp(password,unlock)==0)
 {
 
-    int operations, numbers=1;
+    char numbers='1';
+    char operations;
 
     printf("      ************************************\n");
     printf("      *                                  *\n");
@@ -159,37 +165,35 @@ printf("                                     |_____\\___/ \\____|___|_| \\_|   \
     printf("           `----------`-'----------'\n");
     printf("\n");
 
-    while (numbers != 0)      //cycle
+    while (numbers != '0')      //cycle
     {
-        printf("\n  Select a Note:\n");
+        printf("\n  PRESS KEY:\n");
     printf("  [1] Morning Note\n\n");
     printf("\n\n  Others:\n");
     printf("  [2] GitHub\n");
     printf("  [0] Exit\n\n");
 
-    printf("  Choose an option: ");
-
-   scanf("%d",&operations);
+   operations= getch();
 
      system("cls");
-   getchar ();
+
 
    switch (operations)
 {
-   case 1:
+   case '1':
    {
     morningNote();
     break;
    }
 
-    case 2:
+    case '2':
     {
           github();
           break;  
     }
 
-    case 0:
-    numbers=0;
+    case '0':
+    numbers='0';
     break;
 
     default:
@@ -203,8 +207,10 @@ printf("                                     |_____\\___/ \\____|___|_| \\_|   \
     printf("\t\t\t\t\t / _ \\ \\/ / | __|\n");
     printf("\t\t\t\t\t|  __/>  <| | |_ \n");
     printf("\t\t\t\t\t \\___/_/\\_\\_|\\__|\n");
-        printf("\n  DO YOU WANT TO EXIT? (0) or RETURN TO MAIN MENU? (1): ");
-        scanf("%d", &numbers);
+        printf("\n  PRESS KEY: ");
+        printf("\n\n  EXIT (0)");
+        printf("\n  Main Menu (1)");
+        numbers= getch();
         system("cls");
 
 }
